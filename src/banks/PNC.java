@@ -1,19 +1,34 @@
 package banks;
 
-// TODO 02 - Modify this class to implement IBank interface
-//         - MODIFY THE EXISTING METHODS TO FULFILL THE INTERFACE CONTRACT
-//         - DO NOT ADD NEW METHODS
-//         - Remember to user @Override when appropriate
-public class PNC
+import lionpay.BankActionStatus;
+import lionpay.IBank;
+
+// TODO 02 + Modify this class to implement IBank interface
+//         + MODIFY THE EXISTING METHODS TO FULFILL THE INTERFACE CONTRACT
+//         + DO NOT ADD NEW METHODS
+//         + Remember to user @Override when appropriate
+public class PNC implements IBank
 {
   private double remainingBalance;
 
-  public int deposit(double amount) {
+  @Override
+  public BankActionStatus withdraw(double amount) {
+    return null;
+  }
+
+  public BankActionStatus deposit(double amount) {
     if (amount < 1) {
-      return -1; // insufficient deposit
+      //return -1; // insufficient deposit
+      return BankActionStatus.DEPOSIT_FAILURE;
     }
     remainingBalance += amount;
-    return 0; // success
+    //return 0; // success
+    return BankActionStatus.SUCCESS;
+  }
+
+  @Override
+  public double getBalance() {
+    return 0;
   }
 
   public int takeMoneyOut(double amount) {
@@ -23,7 +38,15 @@ public class PNC
     remainingBalance -= amount;
     return 0; // success
   }
-
+/*
+  public BankActionStatus takeMoneyOut(double amount) {
+    if (amount > remainingBalance) {
+      return BankActionStatus.INSUFFICIENT_FUNDS; // not enough funds
+    }
+    remainingBalance -= amount;
+    return BankActionStatus.SUCCESS; // success
+  }
+*/
   public double getBal() {
     return remainingBalance;
   }

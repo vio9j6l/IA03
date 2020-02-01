@@ -7,12 +7,17 @@ public abstract class CreditCard
   protected double balance = 0;
 
 
-  // TODO 03 - Look at Visa.java and MasterCard.java.  If this method should be concrete, then write it
-  public abstract CardActionStatus charge(double amount);
+  // TODO 03 + Look at Visa.java and MasterCard.java.  If this method should be concrete, then write it
+  public CardActionStatus charge(double amount) {
+    return null;
+  }
 
-  // TODO 04 - Look at Visa.java and MasterCard.java.  If this method should be concrete, then write it
+  // TODO 04 + Look at Visa.java and MasterCard.java.  If this method should be concrete, then write it
   public abstract void payBill(double amount);
 
-  // TODO 05 - Look at Visa.java and MasterCard.java.  If this method should be concrete, then write it
-  public abstract double getBalance();
+  // TODO 05 + Look at Visa.java and MasterCard.java.  If this method should be concrete, then write it
+  public double getBalance() {
+    return 0;
+  }
+
 }

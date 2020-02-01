@@ -3,10 +3,10 @@ package banks;
 import lionpay.BankActionStatus;
 import lionpay.IBank;
 
-// TODO 01 - Modify this class to implement IBank interface
-//         - MODIFY THE EXISTING METHODS TO FULFILL THE INTERFACE CONTRACT
-//         - DO NOT ADD NEW METHODS
-//         - Remember to user @Override when appropriate
+// TODO 01 + Modify this class to implement IBank interface
+//         + MODIFY THE EXISTING METHODS TO FULFILL THE INTERFACE CONTRACT
+//         + DO NOT ADD NEW METHODS
+//         + Remember to user @Override when appropriate
 public class BankOfAmerica implements IBank
 {
   private double balance;
@@ -16,12 +16,13 @@ public class BankOfAmerica implements IBank
     return BankActionStatus.SUCCESS;
   }
 
-  public double withdraw(double amount) {
+
+  public BankActionStatus withdraw(double amount) {
     if (amount > balance) {
-      return "err"; // insufficient funds
+      return BankActionStatus.INSUFFICIENT_FUNDS; // insufficient funds
     }
     balance -= amount;
-    return "success";
+    return BankActionStatus.SUCCESS;
   }
 
   @Override

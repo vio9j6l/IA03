@@ -11,7 +11,7 @@ public class BankOfAmerica implements IBank
 {
   private double balance;
 
-  public BankActionStatus putMoneyIn(double amount) {
+  public BankActionStatus deposit(double amount) {
     balance += amount;
     return BankActionStatus.SUCCESS;
   }
@@ -26,16 +26,8 @@ public class BankOfAmerica implements IBank
   }
 
   @Override
-  public BankActionStatus deposit(double amount) {
-    return null;
-  }
-
-  @Override
   public double getBalance() {
-    return 0;
-  }
-
-  public double getCurrentBalance() {
     return balance;
   }
+
 }

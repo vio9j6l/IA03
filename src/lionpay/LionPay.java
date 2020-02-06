@@ -8,8 +8,12 @@ public class LionPay
 
   // TODO 23 + Delete this method
 
-  // TODO 24 - Delete this method
+  // TODO 24 + Delete this method
 
+  // Get the BankActionStatus status by declared it
+  // Assign the result from withdraw method in the withdraw method
+  // And if the result equals to success, call the payBill method to pay the bill
+  // Otherwise, print out the Error and the returned status
   public void payCardViaBank(CreditCard card, IBank bank, double payment) {
     BankActionStatus status;
     if ((status = bank.withdraw(payment)) == BankActionStatus.SUCCESS) {

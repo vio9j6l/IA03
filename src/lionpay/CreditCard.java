@@ -6,10 +6,7 @@ public abstract class CreditCard
   protected double limit = 1000; // will be the same for all credit cards
   protected double balance = 0;
 
-  public BankActionStatus chargeCard(double amount) {
-    return null;
-  }
-
+  //Methods are concrete since they will be used in Visa and MasterCard class
   // TODO 03 + Look at Visa.java and MasterCard.java.  If this method should be concrete, then write it
   public CardActionStatus charge(double amount) {
     return null;
@@ -17,7 +14,6 @@ public abstract class CreditCard
 
   // TODO 04 + Look at Visa.java and MasterCard.java.  If this method should be concrete, then write it
   public void payBill(double amount) {
-
   }
 
   // TODO 05 + Look at Visa.java and MasterCard.java.  If this method should be concrete, then write it

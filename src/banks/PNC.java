@@ -11,16 +11,18 @@ public class PNC implements IBank
 {
   private double remainingBalance;
 
+  // Put the money into the bank and bank balance and return Success
+  @Override
   public BankActionStatus deposit(double amount) {
     if (amount < 1) {
-      //return -1; // insufficient deposit
       return BankActionStatus.DEPOSIT_FAILURE;
     }
     remainingBalance += amount;
-    //return 0; // success
     return BankActionStatus.SUCCESS;
   }
 
+  // If entered number is greater than bank balance, return insufficient funds
+  // Otherwise, return success and minus the amount from the bank balance
   @Override
   public BankActionStatus withdraw(double amount) {
     if (amount > remainingBalance) {
@@ -30,6 +32,7 @@ public class PNC implements IBank
     return BankActionStatus.SUCCESS; // success
   }
 
+  @Override
   public double getBalance() {
     return remainingBalance;
   }

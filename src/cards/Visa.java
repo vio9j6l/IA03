@@ -40,6 +40,6 @@ public class Visa extends CreditCard
 
   @Override
   public void payBill(double payment) {
-    balance = balance - payment;
+    balance -= payment;
   }
 }
